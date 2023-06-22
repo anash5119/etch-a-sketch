@@ -1,0 +1,17 @@
+body{
+    display:flex;
+    justify-content: center;
+}
+.container{
+    max-width: 336px;
+    height: 336px;
+}
+#gridSquareContainer{
+    display:flex;
+}
+#gridSquare{
+    background-color: blue;
+    min-height: 20px;
+    min-width: 20px;
+    margin: .5px;
+}
