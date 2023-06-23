@@ -3,9 +3,21 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <style> @font-face{
+        font-family: retro; 
+        src: url(RetroGaming.ttf);
+        }
+</style>
 </head>
 <body>
-    <div class="container"> 
-
+    <h1> Etch-a-Sketch</h1>
+    <div class="bodyContainer">
+        <div class="slideContainer">
+            <h3> Pick the Size</h3>
+            <input type="range" min="16" max="40" value="16" 
+            class="slider" id="range">
+            <div id="value"> </div>
+        </div>
+        <div class="container"> </div>
     </div>
 </body>

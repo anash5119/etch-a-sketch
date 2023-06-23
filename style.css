@@ -1,17 +1,46 @@
 body{
     display:flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    background-color: black;
+    font-family: "retro";
+}
+
+h1, h2, h3{
+    color:rgb(28, 189, 28)
+}
+.bodyContainer{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
 }
 .container{
-    max-width: 336px;
-    height: 336px;
+    
 }
 #gridSquareContainer{
     display:flex;
 }
-#gridSquare{
-    background-color: blue;
-    min-height: 20px;
-    min-width: 20px;
-    margin: .5px;
+.gridSquare{
+    background-color: rgb(28, 189, 28);
+}
+
+.slider{
+    -webkit-appearance: none;
+    background-color: grey;
+    border-radius: 20px;
+    opacity: .9;
+}
+
+.slider:hover{
+    opacity: 1;
+}
+.slider::webkit-slider-thumb{
+    -webkit-appearance:none;
+    appearance: none;
+    background: rgb(28, 189, 28);
+}
+
+#value{
+    color: rgb(28, 189, 28);
 }
