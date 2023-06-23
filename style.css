@@ -30,17 +30,44 @@ h1, h2, h3{
     background-color: grey;
     border-radius: 20px;
     opacity: .9;
+    height: 10px;
 }
 
 .slider:hover{
     opacity: 1;
 }
-.slider::webkit-slider-thumb{
+.slider::-webkit-slider-thumb{
     -webkit-appearance:none;
     appearance: none;
+    width: 15px;
+    height: 15px;
     background: rgb(28, 189, 28);
 }
 
 #value{
     color: rgb(28, 189, 28);
+}
+
+.colorButton{
+    transition: .1s;
+    margin-top: 30px;
+    width: 150px;
+    height: 40px;
+    border-color: #20C20E;
+    background-color: black;
+    color: #20C20E;
+    border-radius: 10px;
+}
+
+.colorButton:hover{
+    box-shadow: 0 0 25px 1px #a5aaac;
+}
+.slideContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#value{
+    margin-top: 10px;
 }

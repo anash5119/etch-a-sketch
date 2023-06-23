@@ -3,14 +3,28 @@ let mouseDown = false
 document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
 
+let coloring = false;
+let eraser = false
+let eraserElement = document.getElementById("eraser");
+document.getElementById("eraser").addEventListener("click", () => {
+    if(!eraser){
+        eraser = true;
+        eraserElement.style.backgroundColor = "white";
+    }
+    else if(eraser){
+        eraser = false;
+        eraserElement.style.backgroundColor = "black";
+    }
+});
+
 //gets the input of grid squares from user
 function sliderInput(){
     let sliderOutput = document.getElementById("range");
     let sliderValue = document.getElementById("value");
-    sliderValue.innerHTML = sliderOutput.value;
+    sliderValue.innerHTML = sliderOutput.value+ ' x ' + sliderOutput.value;
     createGrid(sliderOutput.value);
     sliderOutput.oninput = function(){
-        sliderValue.innerHTML = this.value;
+        sliderValue.innerHTML = this.value + " x " + this.value;
         
         const filledContainer = document.querySelector(".container");
         filledContainer.replaceChildren(); //delete grid that's already there
@@ -45,7 +59,15 @@ function createGrid(value){
 
 function draw(e){
     if(e.type === 'mouseover' && !mouseDown) return;
-    e.target.style.backgroundColor = "white";
+    if(eraser){
+        e.target.style.backgroundColor = "rgb(28, 189, 28)";
+    }
+    else if(coloring){}
+
+    else{
+        e.target.style.backgroundColor = "white";
+    }    
+
 }
 
 window.onload = () => {
