@@ -4,6 +4,18 @@ document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
 
 let coloring = false;
+let colorButton = document.getElementById("colorButton");
+document.getElementById("colorButton").addEventListener("click", () => {
+    if(!coloring){
+        coloring = true;
+        colorButton.style.backgroundColor = "white";
+    }
+    else if(coloring){
+        coloring = false;
+        colorButton.style.backgroundColor = "black";
+    }
+});
+
 let eraser = false
 let eraserElement = document.getElementById("eraser");
 document.getElementById("eraser").addEventListener("click", () => {
@@ -56,13 +68,25 @@ function createGrid(value){
     }
 }
 
+function randomColor(){
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let index = 0; index < 6; index++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+    }
 
 function draw(e){
     if(e.type === 'mouseover' && !mouseDown) return;
     if(eraser){
         e.target.style.backgroundColor = "rgb(28, 189, 28)";
     }
-    else if(coloring){}
+    else if(coloring){
+        color = randomColor();
+        console.log(color);
+        e.target.style.backgroundColor = `${color}`;
+    }
 
     else{
         e.target.style.backgroundColor = "white";
