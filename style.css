@@ -8,7 +8,7 @@ body{
 }
 
 h1, h2, h3{
-    color:rgb(28, 189, 28)
+    color:#20C20E;
 }
 .bodyContainer{
     display: flex;
@@ -16,7 +16,7 @@ h1, h2, h3{
     gap: 50px;
 }
 .container{
-    
+    box-shadow: 0 0 50px 10px #a5aaac;
 }
 #gridSquareContainer{
     display:flex;
